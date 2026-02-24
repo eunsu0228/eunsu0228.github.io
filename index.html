@@ -6,7 +6,6 @@
     <title>QR 알림</title>
     
     <link rel="manifest" href="/manifest.json"> 
-    
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
       window.OneSignal = window.OneSignal || [];
@@ -15,9 +14,8 @@
           appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08",
           allowLocalhostAsSecureOrigin: true,
         });
+        OneSignal.showSlidedownPrompt();
       });
-
-      // 사용자가 버튼을 눌렀을 때만 알림 권한을 요청하는 함수
       function subscribeToNotifications() {
         OneSignal.push(function() {
           OneSignal.showNativePrompt();
@@ -28,7 +26,7 @@
     <style>
         body { text-align: center; font-family: sans-serif; padding-top: 50px; }
         .subscribe-btn {
-            background-color: #007aff; /* 애플 스타일 파란색 */
+            background-color: #007aff;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -43,8 +41,8 @@
     </style>
 </head>
 <body>
-    <h1>QR 체크인 완료</h1>
-    <p>아래 버튼을 눌러야 푸시 알림을 받을 수 있습니다.</p>
+    <h1>QR 체크인 시스템</h1>
+    <p>알림을 허용해주시면 즉시 메시지가 발송됩니다.</p>
     
     <button class="subscribe-btn" onclick="subscribeToNotifications()">알림 권한 허용하기</button>
 </body>
