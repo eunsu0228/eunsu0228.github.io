@@ -1,15 +1,23 @@
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08",
-      // 아래 설정을 추가하여 서비스 워커 문제를 강제로 해결합니다.
-      allowLocalhostAsSecureOrigin: true, 
-      serviceWorkerPath: 'OneSignalSDKWorker.js',
-    });
-    
-    // 권한 요청 창 강제 실행
-    OneSignal.showNativePrompt();
-  });
-</script>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 알림</title>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08",
+          allowLocalhostAsSecureOrigin: true,
+        });
+        OneSignal.showNativePrompt();
+      });
+    </script>
+</head>
+<body>
+    <h1>QR 체크인 페이지</h1>
+    <p>알림을 허용해주세요!</p>
+</body>
+</html>
