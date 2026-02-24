@@ -3,10 +3,10 @@
   window.OneSignalDeferred = window.OneSignalDeferred || [];
   OneSignalDeferred.push(function(onesignal) {
     onesignal.init({
-      appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08", 
-      notifyButton: {
-        enable: true,
-      },
+      appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08",
     });
+    
+    // 권한 요청 창 강제 실행
+    onesignal.Notifications.requestPermission();
   });
 </script>
