@@ -1,15 +1,12 @@
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
- window.OneSignalDeferred = window.OneSignalDeferred || [];
+window.OneSignalDeferred = window.OneSignalDeferred || [];
 OneSignalDeferred.push(function(onesignal) {
   onesignal.init({
     appId: "03d8daa1-4d6b-4dd3-a2c4-023dbe378e08",
-    // 서비스 워커 파일 이름을 명시적으로 지정
     serviceWorkerParam: { scope: "/" },
     serviceWorkerPath: "OneSignalSDKWorker.js", 
   });
-  
-  // 알림 요청
   onesignal.Notifications.requestPermission();
 });
 </script>
